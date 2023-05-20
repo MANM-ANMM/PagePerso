@@ -1,0 +1,11 @@
+
+.projects_list {
+	display: flex;
+	justify-content: space-evenly;
+	border: solid black;
+	flex-direction: row;
+}
+
+.projects_list > {
+	display: flex;
+}
