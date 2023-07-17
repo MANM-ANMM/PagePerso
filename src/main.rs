@@ -36,6 +36,7 @@ fn App (cx: Scope, projets:Vec<Projet>) -> impl IntoView {
     
     view! { 
         cx,
+        <Style>{include_str!("style.css")}</Style>
         <button
             on:click=move |_| {
                 set_page(
