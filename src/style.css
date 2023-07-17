@@ -1,0 +1,25 @@
+
+body {
+	margin: 0;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	position: fixed;
+	bottom: 0;
+	width: 92vw;
+	margin: 3vw;
+	padding: 1vw;
+	background-color: beige;
+	border-radius: 2vw;	
+}
+
+main {
+	display: flex;
+	margin: 3vw;
+}
+
+h1 {
+	text-align: center;
+}
