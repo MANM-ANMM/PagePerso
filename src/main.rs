@@ -16,6 +16,7 @@ fn App(cx: Scope) -> impl IntoView {
             <Routes>
                 <Route path={PATH_HOME} view=|cx| view! { cx, <Home/> } />
                 <Route path={PATH_EXPLOSIVITE} view=|cx| view! { cx, <Explosivite/> } />
+                <Route path="/*any" view=|cx| view! { cx, <Home/> } />
             </Routes>
             <div class="foot_space"/>
             </main>
