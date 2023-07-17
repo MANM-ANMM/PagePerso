@@ -34,7 +34,7 @@ fn Explosivite(cx: Scope) -> impl IntoView {
     view! { cx,
     <div class="explosivite">
         <h1>"Explosivité"</h1>
-        {"Explosivité est un plateformer dans lequel l'énergie pour effectuer des actions spéciales comme des sauts est aussi la vie du personnage."}
+        <p>"Explosivité est un plateformer dans lequel l'énergie pour effectuer des actions spéciales comme des sauts est aussi la vie du personnage."</p>
         <img src="img/explosivite.png" alt="Image titre du jeu Explosivité"/>
 
         <iframe src="https://itch.io/embed/893284" width=552 height=167 frameborder=0>
@@ -43,7 +43,7 @@ fn Explosivite(cx: Scope) -> impl IntoView {
             </a>
         </iframe>
 
-        {"J'ai créé Explosivité pendant ma première année de DUT (2020-2021)"}
+        <p>"J'ai créé Explosivité pendant ma première année de DUT (2020-2021)"</p>
     </div> 
     }
 }
