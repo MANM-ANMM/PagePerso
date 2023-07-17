@@ -27,11 +27,15 @@ main {
 	margin: 3vh;
 }
 
-.explosivite, .home {
+.explosivite {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
+}
+
+.explosivite > * {
+	margin-bottom: 2vh;
 }
 
 img {
@@ -40,7 +44,18 @@ img {
 	aspect-ratio: auto;
 }
 
-.explosivite > * {
-	margin-bottom: 2vh;
+.home {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+} 
+
+.home > h1 {
+	align-self: center;
+}
+
+.home > p {
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
 

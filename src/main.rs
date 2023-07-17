@@ -38,7 +38,7 @@ fn Explosivite(cx: Scope) -> impl IntoView {
             </a>
         </iframe>
 
-        <p>"J'ai créé Explosivité pendant ma première année de DUT (2020-2021)"</p>
+        <p>"J'ai créé Explosivité pendant ma première année de DUT (2020-2021) avec Godot."</p>
     </div>
     }
 }
@@ -48,7 +48,9 @@ fn Home(cx: Scope) -> impl IntoView {
     view! { cx,
         <div class="home">
             <h1>"Martin Rouault"</h1>
-            <p>""</p>
+            <p>"Je suis étudiant en informatique en 2ème année d'école d'ingénieur."</p>
+            <p>"Ce site expose une partie des projets que j'ai créé ces dernières années. Le code de ce site est disponible sur "<a href="https://github.com/MANM-ANMM/PagePerso">github</a>"."</p>
+            <p>"La plus part des projets ici sont des jeux-vidéo développés dans mon temps libre. Soit sous forme de projet au long court, soit en game jam de 48 heures."</p>
         </div>
     }
 }
