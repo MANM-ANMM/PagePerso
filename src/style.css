@@ -27,7 +27,7 @@ main {
 	margin: 3vh;
 }
 
-.explosivite {
+.explosivite, .home {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

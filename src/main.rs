@@ -1,33 +1,28 @@
 use leptos::*;
-use leptos_router::*;
 use leptos_meta::*;
+use leptos_router::*;
 
 fn main() {
     mount_to_body(|cx| view! {cx , <App/> })
 }
 
 #[component]
-fn App (cx: Scope) -> impl IntoView {
-
-    view! { 
+fn App(cx: Scope) -> impl IntoView {
+    view! {
         cx,
         <Style>{include_str!("style.css")}</Style>
-            <Router>
+        <Router>
             <main>
             <Routes>
-                <Route path="/" view=|cx| view! { cx, <Home/> } />
-                <Route path="/explosivite" view=|cx| view! { cx, <Explosivite/> } />
+                <Route path={PATH_HOME} view=|cx| view! { cx, <Home/> } />
+                <Route path={PATH_EXPLOSIVITE} view=|cx| view! { cx, <Explosivite/> } />
             </Routes>
             <div class="foot_space"/>
             </main>
-            <nav>
-                <A href="/">"Home"</A>
-                <A href="/explosivite">"Explosivite"</A>
-            </nav>
+            <Navigation/>
         </Router>
     }
 }
-
 
 #[component]
 fn Explosivite(cx: Scope) -> impl IntoView {
@@ -44,35 +39,29 @@ fn Explosivite(cx: Scope) -> impl IntoView {
         </iframe>
 
         <p>"J'ai créé Explosivité pendant ma première année de DUT (2020-2021)"</p>
-    </div> 
+    </div>
     }
 }
 
 #[component]
 fn Home(cx: Scope) -> impl IntoView {
     view! { cx,
-        <div>
-            <h1>"Salut page 1"</h1>
-
+        <div class="home">
+            <h1>"Martin Rouault"</h1>
+            <p>""</p>
         </div>
     }
 }
 
 #[component]
-fn ProgressBar (
-    cx: Scope, 
-    #[prop(default = 100)]
-    /// Maximum value for the progress bar
-    max : u16,
-    /// How much progress should be displayed
-    #[prop(into)]
-    progress: Signal<i32>
-    ) -> impl IntoView {
-    view! {cx, 
-        <progress
-            max = max
-            value = progress
-        />
+fn Navigation(cx: Scope) -> impl IntoView {
+    view! { cx,
+        <nav>
+            <A href={PATH_HOME}>"Home"</A>
+            <A href={PATH_EXPLOSIVITE}>"Explosivite"</A>
+        </nav>
     }
 }
 
+static PATH_HOME: &str = "/";
+static PATH_EXPLOSIVITE: &str = "/explosivite";
