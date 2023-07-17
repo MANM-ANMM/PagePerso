@@ -12,18 +12,18 @@ fn App (cx: Scope) -> impl IntoView {
     view! { 
         cx,
         <Style>{include_str!("style.css")}</Style>
-        <Router>
+            <Router>
             <main>
-                <Routes>
-                    <Route path="/" view=|cx| view! { cx, <Home/> } />
-                    <Route path="/explosivite" view=|cx| view! { cx, <Explosivite/> } />
-                </Routes>
+            <Routes>
+                <Route path="/" view=|cx| view! { cx, <Home/> } />
+                <Route path="/explosivite" view=|cx| view! { cx, <Explosivite/> } />
+            </Routes>
+            <div class="foot_space"/>
             </main>
             <nav>
                 <A href="/">"Home"</A>
                 <A href="/explosivite">"Explosivite"</A>
             </nav>
-
         </Router>
     }
 }
@@ -32,13 +32,21 @@ fn App (cx: Scope) -> impl IntoView {
 #[component]
 fn Explosivite(cx: Scope) -> impl IntoView {
     view! { cx,
-        <div class="page">
-            <h1>"Explosivité"</h1>
-            {"Explosivité est un plateformer dans lequel l'énergie pour effectuer des actions spéciales comme des sauts est aussi la vie du personnage."}
-        </div>
+    <div class="explosivite">
+        <h1>"Explosivité"</h1>
+        {"Explosivité est un plateformer dans lequel l'énergie pour effectuer des actions spéciales comme des sauts est aussi la vie du personnage."}
+        <img src="img/explosivite.png" alt="Image titre du jeu Explosivité"/>
+
+        <iframe src="https://itch.io/embed/893284" width=552 height=167 frameborder=0>
+            <a href="https://anmm.itch.io/explosivite">
+                "Explosivite by ANMM"
+            </a>
+        </iframe>
+
+        {"J'ai créé Explosivité pendant ma première année de DUT (2020-2021)"}
+    </div> 
     }
 }
-
 
 #[component]
 fn Home(cx: Scope) -> impl IntoView {
