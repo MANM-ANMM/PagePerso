@@ -16,12 +16,22 @@ fn App(cx: Scope) -> impl IntoView {
             <Routes>
                 <Route path={PATH_HOME} view=|cx| view! { cx, <Home/> } />
                 <Route path={PATH_EXPLOSIVITE} view=|cx| view! { cx, <Explosivite/> } />
+                <Route path={PATH_TEST} view=|cx| view! { cx, <Test/> } />
                 <Route path="/*any" view=|cx| view! { cx, <Home/> } />
             </Routes>
             <div class="foot_space"/>
             </main>
             <Navigation/>
         </Router>
+    }
+}
+
+#[component]
+fn Test(cx: Scope) -> impl IntoView {
+    view! { cx,
+    <div class="test">
+        "test"
+    </div>
     }
 }
 
@@ -62,9 +72,11 @@ fn Navigation(cx: Scope) -> impl IntoView {
         <nav>
             <A href={PATH_HOME}>"Home"</A>
             <A href={PATH_EXPLOSIVITE}>"Explosivite"</A>
+            <A href={PATH_TEST}>"Test"</A>
         </nav>
     }
 }
 
 static PATH_HOME: &str = "/";
 static PATH_EXPLOSIVITE: &str = "/explosivite";
+static PATH_TEST: &str = "/test";
