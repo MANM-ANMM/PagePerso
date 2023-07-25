@@ -1,6 +1,7 @@
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
+use const_format::concatcp;
 
 fn main() {
     mount_to_body(|cx| view! {cx , <App/> })
@@ -41,7 +42,7 @@ fn Explosivite(cx: Scope) -> impl IntoView {
     <div class="explosivite">
         <h1>"Explosivité"</h1>
         <p>"Explosivité est un plateformer dans lequel l'énergie pour effectuer des actions spéciales comme des sauts est aussi la vie du personnage."</p>
-        <img src="img/explosivite.png" alt="Image titre du jeu Explosivité"/>
+        <img src={PATH_ROOT.to_owned() + "img/explosivite.png"} alt="Image titre du jeu Explosivité"/>
 
         <iframe src="https://itch.io/embed/893284" width=552 height=167 frameborder=0>
             <a href="https://anmm.itch.io/explosivite">
@@ -77,6 +78,12 @@ fn Navigation(cx: Scope) -> impl IntoView {
     }
 }
 
-static PATH_HOME: &str = "/";
-static PATH_EXPLOSIVITE: &str = "/explosivite";
-static PATH_TEST: &str = "/test";
+
+const PATH_ROOT : &str = match cfg!(debug_assertions) {
+    true => "/",
+    false => "/~marouault/",
+};
+
+static PATH_HOME: &str = PATH_ROOT;
+static PATH_EXPLOSIVITE: &str = concatcp!(PATH_ROOT, "explosivite");
+static PATH_TEST: &str = concatcp!(PATH_ROOT, "test");

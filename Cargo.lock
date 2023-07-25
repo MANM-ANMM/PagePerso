@@ -779,6 +779,7 @@ dependencies = [
 name = "leptos_go"
 version = "0.1.0"
 dependencies = [
+ "const_format",
  "leptos",
  "leptos_meta",
  "leptos_router",
