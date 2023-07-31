@@ -17,7 +17,7 @@ fn App(cx: Scope) -> impl IntoView {
 			<Routes>
 				<Route path={PATH_HOME} view=|cx| view! { cx, <Home/> } />
 				<Route path={PATH_EXPLOSIVITE} view=|cx| view! { cx, <Explosivite/> } />
-				<Route path={PATH_TEST} view=|cx| view! { cx, <Test/> } />
+				<Route path={PATH_SITE} view=|cx| view! { cx, <Site/> } />
 				<Route path="/*any" view=|cx| view! { cx, <Home/> } />
 			</Routes>
 			<div class="foot_space"/>
@@ -28,10 +28,13 @@ fn App(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn Test(cx: Scope) -> impl IntoView {
+fn Site(cx: Scope) -> impl IntoView {
 	view! { cx,
-	<div class="test">
-		"test"
+	<div class="site">
+		<h1>Ce site</h1>
+		<p>"Ce site expose une partie des projets que j'ai créé ces dernières années. Le code de ce site est disponible sur "<a href="https://github.com/MANM-ANMM/PagePerso">github</a>"."</p>
+		<p>"J'ai dévelopé ce site en Rust, en utilisant la bibliothèque leptos."</p>
+		<iframe src={PATH_ROOT}/>
 	</div>
 	}
 }
@@ -61,7 +64,6 @@ fn Home(cx: Scope) -> impl IntoView {
 		<div class="home">
 			<h1>"Martin Rouault"</h1>
 			<p>"Je suis étudiant en informatique en 2ème année d'école d'ingénieur."</p>
-			<p>"Ce site expose une partie des projets que j'ai créé ces dernières années. Le code de ce site est disponible sur "<a href="https://github.com/MANM-ANMM/PagePerso">github</a>"."</p>
 			<p>"La plus part des projets ici sont des jeux-vidéo développés dans mon temps libre. Soit sous forme de projet au long court, soit en game jam de 48 heures."</p>
 		</div>
 	}
@@ -73,7 +75,7 @@ fn Navigation(cx: Scope) -> impl IntoView {
 		<nav>
 			<A href={PATH_HOME}>"Home"</A>
 			<A href={PATH_EXPLOSIVITE}>"Explosivite"</A>
-			<A href={PATH_TEST}>"Test"</A>
+			<A href={PATH_SITE}>"Ce site"</A>
 		</nav>
 	}
 }
@@ -86,6 +88,6 @@ const PATH_ROOT : &str = match cfg!(debug_assertions) {
 
 static PATH_HOME: &str = PATH_ROOT;
 static PATH_EXPLOSIVITE: &str = concatcp!(PATH_ROOT, "explosivite");
-static PATH_TEST: &str = concatcp!(PATH_ROOT, "test");
+static PATH_SITE: &str = concatcp!(PATH_ROOT, "site");
 
 
